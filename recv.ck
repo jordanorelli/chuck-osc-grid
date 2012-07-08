@@ -1,3 +1,10 @@
+"/example"  => string monomePrefix;
+34601       => int monomeReceivePort;;
+"localhost" => string monomeHost;
+17102       => int monomeSendPort;
+
+
+
 Math.pow(2, 1/12.0) => float toneStep;
 ToneCalc.grid(8, 8, 5, 1, 55.0, 12.0) @=> float tones[][];
 UgenGrid envelopes;
@@ -25,7 +32,7 @@ root.patch(envelopes);
 envelopes.patch(dac);
 
 Monome monome;
-monome.init("/example", 34601, "localhost", 17102);
+monome.init(monomePrefix, monomeReceivePort, monomeHost, monomeSendPort);
 
 fun void monomeHandler() {
     monome.e @=> MonomeKeyEvent e;
