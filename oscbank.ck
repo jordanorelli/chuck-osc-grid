@@ -208,7 +208,6 @@ public class OscBank
 
     fun void setOp(int column, int row, int value)
     {
-        <<< "setOp", bank[column][row], column, row, value >>>;
         value => bank[column][row].op;
     }
 
